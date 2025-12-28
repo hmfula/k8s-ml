@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mk8s-ml-svc
+spec:
+  selector:
+    app: k8s-ml
+  ports:
+  - port: 80
+    targetPort: 8000

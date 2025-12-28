@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-ml
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-ml
+  template:
+    metadata:
+      labels:
+        app: k8s-ml
+    spec:
+      containers:
+      - name: k8s-ml
+        image: quay.io/hmfula/k8s-ml:v1
+        ports:
+        - containerPort: 8000
